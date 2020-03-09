@@ -12,7 +12,7 @@ public class SpringCloudConfig {
     public RouteLocator gatewayRoutes(RouteLocatorBuilder builder) {
         return builder.routes()
                 .route(r -> r.path("/hello")
-                        .uri("lb://helloservice/hello/")
+                        .uri("http://helloservice:8081/hello/")
                         .id("helloService"))
 
                 .route(r -> r.path("/world")
