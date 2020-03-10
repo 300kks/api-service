@@ -11,4 +11,9 @@ public class ApiServiceController {
     public Mono<String> home() {
         return Mono.just("{ \"message\": \"Home\" }");
     }
+
+    @GetMapping("/fallback")
+    public Mono<String> fallback() {
+        return Mono.just("{ \"message\": \"fallback\" }");
+    }
 }

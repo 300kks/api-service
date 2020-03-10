@@ -20,11 +20,15 @@ public class SpringCloudConfig {
     public RouteLocator gatewayRoutes(RouteLocatorBuilder builder) {
         return builder.routes()
                 .route(r -> r.path("/hello")
-                        .uri(properties.getRest().get("helloservice") + "/hello/")
+                        .filters(f -> f.circuitBreaker(c -> c.setName("helloserviceCircuitBreaker")
+                                .setFallbackUri("/fallback")))
+                        .uri(properties.getRest().get("helloservice") + "/hello")
                         .id("helloService"))
 
                 .route(r -> r.path("/world")
-                        .uri(properties.getRest().get("worldservice") + "/world/")
+                        .filters(f -> f.circuitBreaker(c -> c.setName("worldserviceCircuitBreaker")
+                                .setFallbackUri("/fallback")))
+                        .uri(properties.getRest().get("worldservice") + "/world")
                         .id("worldService"))
 
                 .build();
