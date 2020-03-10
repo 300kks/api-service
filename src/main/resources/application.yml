@@ -1,0 +1,3 @@
+rest:
+  helloservice: http://helloservice:8081
+  worldservice: http://worldservice:8082
