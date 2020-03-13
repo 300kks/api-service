@@ -5,10 +5,12 @@
 replicaCount: 1
 
 image:
-  repository: "vmokrecov/api-service"
+  repository: "docker.pkg.github.com/300kks/api-service/api-service"
   pullPolicy: IfNotPresent
 
-imagePullSecrets: []
+imagePullSecrets:
+  - name: regcred
+
 nameOverride: ""
 fullnameOverride: ""
 
