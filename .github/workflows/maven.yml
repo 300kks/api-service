@@ -41,21 +41,3 @@ jobs:
         username: ${{secrets.GITHUB_PKG_REGISTRY_USERNAME}}
         password: ${{secrets.GITHUB_PKG_REGISTRY_PASSWORD}}
         registry: docker.pkg.github.com
-
-  delivery:
-    
-    needs: [deploy]
-    runs-on: 'ubuntu-latest'
-    
-    steps:
-    - uses: 'actions/checkout@v1'
-    - name: 'Deploy'
-      uses: 'deliverybot/helm@v1'
-      with:
-        helm: 'helm3'
-        release: 'api-service'
-        namespace: 'default'
-        chart: 'chart/api-service'
-        token: '${{ github.token }}'
-      env:
-        KUBECONFIG_FILE: '${{ secrets.KUBECONFIG }}'
