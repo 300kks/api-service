@@ -47,6 +47,8 @@ app.kubernetes.io/managed-by: {{ .Release.Service }}
 Selector labels
 */}}
 {{- define "api-service.selectorLabels" -}}
+app: api-service
+version: v1
 app.kubernetes.io/name: {{ include "api-service.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end -}}
