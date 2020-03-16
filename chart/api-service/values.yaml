@@ -39,6 +39,8 @@ service:
   type: LoadBalancer
   externalPort: 8080
   internalPort: 8080
+  livenessProbe: actuator/health
+  readinessProbe: actuator/health
 
 ingress:
   enabled: false
