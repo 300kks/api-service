@@ -1,3 +1,12 @@
 rest:
   helloservice: http://helloservice:8081
   worldservice: http://worldservice:8082
+
+spring:
+  application:
+    name: api-service
+
+opentracing:
+  jaeger:
+    http-sender:
+      url: http://jaeger-collector.istio-system:14268/api/traces
