@@ -34,8 +34,8 @@ public class SpringCloudConfig {
                 .route(r -> r.path("/helloworld")
                         .filters(f -> f.circuitBreaker(c -> c.setName("helloworldserviceCircuitBreaker")
                                 .setFallbackUri("fallback")))
-                        .uri(properties.getRest().get("helloworldservice") + "helloworld")
-                        .id("helloworldservice"))
+                        .uri(properties.getRest().get("helloworldservice") + "/helloworld")
+                        .id("helloworldService"))
 
                 .build();
     }
