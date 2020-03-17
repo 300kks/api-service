@@ -1,6 +1,7 @@
 rest:
   helloservice: http://helloservice:8081
   worldservice: http://worldservice:8082
+  helloworldservice: http://helloworldservice:8083
 
 spring:
   application:

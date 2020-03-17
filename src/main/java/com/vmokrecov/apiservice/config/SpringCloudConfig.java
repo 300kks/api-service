@@ -31,6 +31,12 @@ public class SpringCloudConfig {
                         .uri(properties.getRest().get("worldservice") + "/world")
                         .id("worldService"))
 
+                .route(r -> r.path("/helloworld")
+                        .filters(f -> f.circuitBreaker(c -> c.setName("helloworldserviceCircuitBreaker")
+                                .setFallbackUri("fallback")))
+                        .uri(properties.getRest().get("helloworldservice") + "helloworld")
+                        .id("helloworldservice"))
+
                 .build();
     }
 }
