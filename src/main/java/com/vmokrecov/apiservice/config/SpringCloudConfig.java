@@ -20,7 +20,9 @@ public class SpringCloudConfig {
     public RouteLocator gatewayRoutes(RouteLocatorBuilder builder) {
         return builder.routes()
                 .route(r -> r.path("/oauth/token")
-                        .uri("http://localhost:8090/oauth/token")
+                        .filters(f -> f.circuitBreaker(c -> c.setName("authserviceCircuitBreaker")
+                                .setFallbackUri("/fallback")))
+                        .uri(properties.getRest().get("auth-service") + "/oauth/token")
                         .id("auth"))
 
                 .route(r -> r.path("/hello")
