@@ -37,6 +37,6 @@ jobs:
         uses: elgohr/Publish-Docker-Github-Action@master
         with:
           name: docker.pkg.github.com/300kks/api-service/api-service
-          username: ${{secrets.GITHUB_PKG_REGISTRY_USERNAME}}
-          password: ${{secrets.GITHUB_PKG_REGISTRY_PASSWORD}}
+          username: ${{secrets.PKG_REGISTRY_USERNAME}}
+          password: ${{secrets.PKG_REGISTRY_PASSWORD}}
           registry: docker.pkg.github.com
