@@ -1,4 +1,4 @@
-# api-service
+# Api-service
 
 A microservice template developed using the reactive stack (WebFlux, Spring Cloud Gateway, Resilience4j), containing a Helm chart and ready to be deployed to a Kubernetes, following the general accepted practices of GitOps (Argo CD, GitHub Actions).
 
