@@ -14,6 +14,5 @@ Microservice contains:
 - GitHub Actions
 - Helm chart
 - Distributed trace support (Jaeger)
-- Spring security
 - Actuator
 - Swagger
