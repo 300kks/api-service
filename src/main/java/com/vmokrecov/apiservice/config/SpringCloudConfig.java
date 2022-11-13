@@ -22,26 +22,22 @@ public class SpringCloudConfig {
                 .route(r -> r.path("/oauth/token")
                         .filters(f -> f.circuitBreaker(c -> c.setName("authserviceCircuitBreaker")
                                 .setFallbackUri("/fallback")))
-                        .uri(properties.getRest().get("auth-service") + "/oauth/token")
-                        .id("auth"))
+                        .uri(properties.getRest().get("auth-service") + "/oauth/token"))
 
                 .route(r -> r.path("/hello")
                         .filters(f -> f.circuitBreaker(c -> c.setName("helloserviceCircuitBreaker")
                                 .setFallbackUri("/fallback")))
-                        .uri(properties.getRest().get("helloservice") + "/hello")
-                        .id("helloService"))
+                        .uri(properties.getRest().get("helloservice") + "/hello"))
 
                 .route(r -> r.path("/world")
                         .filters(f -> f.circuitBreaker(c -> c.setName("worldserviceCircuitBreaker")
                                 .setFallbackUri("/fallback")))
-                        .uri(properties.getRest().get("worldservice") + "/world")
-                        .id("worldService"))
+                        .uri(properties.getRest().get("worldservice") + "/world"))
 
                 .route(r -> r.path("/helloworld")
                         .filters(f -> f.circuitBreaker(c -> c.setName("helloworldserviceCircuitBreaker")
                                 .setFallbackUri("/fallback")))
-                        .uri(properties.getRest().get("helloworldservice") + "/helloworld")
-                        .id("helloworldService"))
+                        .uri(properties.getRest().get("helloworldservice") + "/helloworld"))
 
                 .build();
     }
