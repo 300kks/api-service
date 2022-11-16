@@ -24,7 +24,7 @@ public class SwaggerConfiguration {
                         .description("My Description")
                         .version("1.0")
                         .contact(DEFAULT_CONTACT)
-                        .license(new License().name("MIT").url("https://github.com/300kks/worldservice/blob/master/LICENSE")));
+                        .license(new License().name("MIT").url("https://github.com/300kks/api-service/blob/master/LICENSE")));
     }
 
     @Bean
